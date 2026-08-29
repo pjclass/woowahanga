@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="우와한가가 고른 제철 농산물과 축산물을 만나보세요.">
+  <title>제품 | 우와한가</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2314352A'/%3E%3Cpath d='M15 40C15 23 27 12 49 11c0 22-11 36-30 39M20 49c7-13 16-22 29-31' fill='none' stroke='%23FBF8F0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="우와한가 홈">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M8 27C8 15 16 7 31 6c0 15-7 25-20 27"/>
+        <path d="M12 33c5-9 11-15 19-21"/>
+      </svg>
+      <span>우와한가</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span>메뉴</span><span class="menu-mark" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+      <a href="index.html#home">홈</a><a href="about.html">내 소개</a><a href="products.html" aria-current="page">제품</a><a href="index.html#stories">이야기</a><a href="index.html#contact">연락하기</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="catalog-hero" aria-labelledby="catalog-title">
+      <div class="catalog-hero-media" role="img" aria-label="한우와 사과, 고구마가 놓인 우와한가 제품 사진"></div>
+      <div class="catalog-hero-scrim" aria-hidden="true"></div>
+      <div class="catalog-hero-copy">
+        <p class="kicker">우와한가 제품</p>
+        <h1 id="catalog-title">좋은 산지에서 고른<br>지금의 먹거리</h1>
+        <p>가족의 식탁에 자신 있게 올릴 수 있는<br>제품을 살펴보고 소개합니다.</p>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-list-title">
+      <header class="catalog-heading">
+        <p class="section-label">판매 중인 제품</p>
+        <h2 id="catalog-list-title">지금 만날 수 있는<br>우와한가의 제품</h2>
+        <p>구매하기를 누르면 네이버 스마트스토어의<br>해당 제품 페이지가 새 창으로 열립니다.</p>
+      </header>
+      <div class="product-card-grid catalog-grid" data-product-grid aria-live="polite">
+        <p class="product-loading">제품을 불러오는 중입니다.</p>
+      </div>
+      <p class="catalog-note">제품 구성과 가격은 산지와 판매 상황에 따라 달라질 수 있습니다.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html"><span>우와한가</span><small>WooWahanga</small></a>
+    <p>자연이 기른 좋은 맛을 전합니다.</p>
+    <div><span>© 2026 우와한가</span><a href="#top">맨 위로</a></div>
+  </footer>
+</body>
+</html>

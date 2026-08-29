@@ -42,23 +42,22 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
 .section-heading { display:grid; grid-template-columns:minmax(110px,.35fr) 1.2fr .7fr; gap:7vw; align-items:end; margin-bottom:clamp(72px,12vh,140px); }
 .section-heading .section-label { align-self:start; }
 .section-heading>p { max-width:28ch; margin:0; font-size:.83rem; }
-.products { padding-inline:0; }
-.products .section-heading,.availability { margin-inline:clamp(24px,8vw,132px); }
-.product-list { display:grid; gap:max(15vh,120px); }
-.product { display:grid; grid-template-columns:minmax(0,1.75fr) minmax(280px,.65fr); gap:clamp(38px,7vw,110px); align-items:end; }
-.product:nth-child(even) { grid-template-columns:minmax(280px,.65fr) minmax(0,1.75fr); }
-.product:nth-child(even) .product-photo { grid-column:2; }
-.product:nth-child(even) .product-caption { grid-column:1; grid-row:1; padding-left:clamp(24px,8vw,132px); }
-.product-photo { min-height:min(74vw,860px); background-image:url("assets/woowahanga-hero.png"); background-repeat:no-repeat; transition:transform .5s ease; }
-.product:hover .product-photo { transform:scale(1.015); }
-.product-beef .product-photo { background-size:185%; background-position:28% 82%; }
-.product-sweet-potato .product-photo { background-size:220%; background-position:98% 82%; }
-.product-apple .product-photo { background-size:185%; background-position:78% 24%; }
-.product-caption { max-width:35ch; padding-right:clamp(24px,8vw,132px); padding-bottom:5vh; }
-.product-caption span,.story-list span { color:var(--accent); font-size:.68rem; font-weight:700; letter-spacing:.08em; }
-.product-caption h3 { margin:12px 0 24px; font-size:clamp(2.4rem,4.2vw,4.8rem); }
-.product-caption p { max-width:29ch; margin:0; font-size:.84rem; }
-.availability { margin-top:42px; text-align:right; font-size:.68rem; }
+.products { padding-inline:clamp(24px,8vw,132px); }
+.product-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(28px,3vw,52px); align-items:start; }
+.product-card { min-width:0; border-top:1px solid var(--green); }
+.product-card:nth-child(2) { margin-top:9vh; }
+.product-image-link { display:block; overflow:hidden; aspect-ratio:4/5; background:var(--green); }
+.product-image-link img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+.product-card:hover .product-image-link img { transform:scale(1.025); }
+.product-card-body { padding:24px 0 0; }
+.product-card h3 { min-height:5.8em; margin:0 0 24px; font-size:clamp(1.05rem,1.45vw,1.35rem); line-height:1.45; letter-spacing:-.045em; }
+.product-price { margin:0 0 28px; color:var(--accent); font-size:clamp(1.2rem,1.8vw,1.6rem); font-weight:900; letter-spacing:-.04em; }
+.buy-button { display:flex; width:100%; min-height:52px; align-items:center; justify-content:center; border:1px solid var(--green); background:var(--green); color:var(--ivory); font-size:.76rem; font-weight:700; text-decoration:none; }
+.product-section-foot { margin-top:clamp(60px,10vh,110px); padding-top:22px; border-top:1px solid var(--green); display:flex; justify-content:space-between; gap:30px; font-size:.7rem; }
+.product-section-foot p { margin:0; }
+.product-section-foot a { color:var(--accent); font-weight:700; text-underline-offset:6px; }
+.product-loading,.product-error { grid-column:1/-1; min-height:30vh; margin:0; font-size:.78rem; }
+.story-list span { color:var(--accent); font-size:.68rem; font-weight:700; letter-spacing:.08em; }
 .stories .section-heading { margin-bottom:8vh; }
 .story-list { border-top:1px solid var(--green); }
 .story-list article { min-height:230px; padding:42px 0; border-bottom:1px solid var(--green); display:grid; grid-template-columns:.45fr 1fr .8fr auto; gap:5vw; align-items:start; }
@@ -111,6 +110,16 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
 .promise { min-height:100svh; padding:max(15vh,120px) clamp(24px,8vw,132px); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
 .promise h2 { max-width:18ch; font-size:clamp(2.8rem,5.3vw,6rem); }
 .promise>a { margin-top:clamp(52px,9vh,90px); padding-bottom:8px; border-bottom:2px solid var(--accent); color:var(--accent); font-size:.78rem; font-weight:700; text-decoration:none; }
+.catalog-hero { position:relative; min-height:100svh; overflow:hidden; display:flex; align-items:flex-end; color:var(--ivory); }
+.catalog-hero-media { position:absolute; inset:0; background:url("assets/woowahanga-hero.png") 60% center/cover no-repeat; }
+.catalog-hero-scrim { position:absolute; inset:0; background:linear-gradient(90deg,rgba(20,53,42,.86) 0%,rgba(20,53,42,.45) 52%,rgba(20,53,42,.18) 100%); }
+.catalog-hero-copy { position:relative; z-index:1; width:min(1050px,88vw); margin:0 0 clamp(72px,11vh,120px) clamp(24px,8vw,132px); }
+.catalog-hero h1 { max-width:13ch; }
+.catalog-hero-copy>p:last-child { max-width:34ch; margin:0; font-size:clamp(.88rem,1.2vw,1rem); }
+.catalog-section { min-height:115svh; padding:max(15vh,120px) clamp(24px,8vw,132px); }
+.catalog-heading { display:grid; grid-template-columns:.35fr 1.2fr .65fr; gap:7vw; align-items:end; margin-bottom:clamp(80px,15vh,160px); }
+.catalog-heading>p:last-child { max-width:32ch; margin:0; font-size:.8rem; }
+.catalog-note { margin:clamp(62px,10vh,110px) 0 0; padding-top:20px; border-top:1px solid var(--green); font-size:.68rem; text-align:right; }
 @media (max-width:900px) {
   .site-header { height:76px; padding-inline:22px; }
   .menu-toggle { display:flex; align-items:center; gap:10px; color:var(--ivory); cursor:pointer; }
@@ -124,11 +133,8 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
   .manifesto,.section-heading { grid-template-columns:1fr; gap:32px; }
   .manifesto-copy .lead { margin-top:56px; }
   .principles { margin-top:72px; }
-  .product,.product:nth-child(even) { grid-template-columns:1fr; gap:36px; }
-  .product:nth-child(even) .product-photo,.product:nth-child(even) .product-caption { grid-column:1; }
-  .product:nth-child(even) .product-caption { grid-row:auto; padding-left:24px; }
-  .product-photo { min-height:78svh; }
-  .product-caption { padding:0 24px; }
+  .product-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .catalog-heading { grid-template-columns:1fr; gap:32px; }
   .story-list article { grid-template-columns:110px 1fr; gap:24px; }
   .story-list article>p,.story-list article>a { grid-column:2; }
   .contact { grid-template-columns:1fr; }
@@ -146,12 +152,15 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
   .scroll-cue { right:22px; }
   .section { padding:max(15vh,100px) 20px; }
   h2 { font-size:clamp(2.5rem,12vw,3.6rem); }
-  .products { padding-inline:0; }
-  .products .section-heading,.availability { margin-inline:20px; }
-  .product-photo { min-height:70svh; }
-  .product-beef .product-photo { background-size:270%; background-position:34% 84%; }
-  .product-sweet-potato .product-photo { background-size:330%; background-position:97% 83%; }
-  .product-apple .product-photo { background-size:260%; background-position:76% 23%; }
+  .products { padding-inline:20px; }
+  .product-card-grid { grid-template-columns:1fr; gap:72px; }
+  .product-card:nth-child(2) { margin-top:0; }
+  .product-card h3 { min-height:0; font-size:1.15rem; }
+  .product-section-foot { align-items:flex-start; flex-direction:column; }
+  .catalog-hero-media { background-position:67% center; }
+  .catalog-hero-scrim { background:linear-gradient(0deg,rgba(20,53,42,.9) 0%,rgba(20,53,42,.25) 75%,rgba(20,53,42,.38) 100%); }
+  .catalog-hero-copy { width:calc(100% - 40px); margin-left:20px; }
+  .catalog-section { padding-inline:20px; }
   .story-list article { grid-template-columns:1fr; min-height:0; }
   .story-list article>p,.story-list article>a { grid-column:1; }
   .story-list h3 { font-size:1.65rem; }
@@ -174,6 +183,6 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
 }
 @media (prefers-reduced-motion:reduce) {
   .marquee-track { animation:none; transform:none; }
-  .product-photo { transition:none; }
-  .product:hover .product-photo { transform:none; }
+  .product-image-link img { transition:none; }
+  .product-card:hover .product-image-link img { transform:none; }
 }
