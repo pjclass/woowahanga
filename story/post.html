@@ -58,7 +58,28 @@
     return d.getFullYear() + '. ' + (d.getMonth()+1) + '. ' + d.getDate() + '.';
   }
 
-  // 초경량 마크다운: 빈 줄=문단, "## "=소제목, "- "=리스트. 전부 textContent로 삽입(XSS-safe).
+  function appendInline(parent, text){
+    var pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+    var last = 0;
+    var match;
+    while ((match = pattern.exec(text))){
+      parent.appendChild(document.createTextNode(text.slice(last, match.index)));
+      try {
+        var url = new URL(match[2], location.href);
+        if (url.protocol !== 'http:' && url.protocol !== 'https:') throw new Error('허용되지 않는 링크');
+        var a = el('a', null, match[1]);
+        a.href = match[2];
+        if (url.origin !== location.origin){ a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+        parent.appendChild(a);
+      } catch (e) {
+        parent.appendChild(document.createTextNode(match[0]));
+      }
+      last = pattern.lastIndex;
+    }
+    parent.appendChild(document.createTextNode(text.slice(last)));
+  }
+
+  // 초경량 마크다운: 빈 줄=문단, "## "=소제목, "- "/"1. "=리스트, [이름](주소)=링크.
   function renderBody(src){
     var box = el('div','body');
     var blocks = String(src || '').replace(/\r\n/g,'\n').split(/\n\s*\n/);
@@ -68,12 +89,26 @@
       var lines = block.split('\n');
       if (lines.every(function(l){ return /^- /.test(l.trim()); })){
         var ul = el('ul');
-        lines.forEach(function(l){ ul.appendChild(el('li', null, l.trim().slice(2))); });
+        lines.forEach(function(l){
+          var li = el('li');
+          appendInline(li, l.trim().slice(2));
+          ul.appendChild(li);
+        });
         box.appendChild(ul);
+      } else if (lines.every(function(l){ return /^\d+\. /.test(l.trim()); })){
+        var ol = el('ol');
+        lines.forEach(function(l){
+          var li = el('li');
+          appendInline(li, l.trim().replace(/^\d+\. /, ''));
+          ol.appendChild(li);
+        });
+        box.appendChild(ol);
       } else if (/^## /.test(block)){
         box.appendChild(el('h2', null, block.slice(3).trim()));
       } else {
-        box.appendChild(el('p', null, block));
+        var p = el('p');
+        appendInline(p, block);
+        box.appendChild(p);
       }
     });
     return box;
@@ -252,4 +287,3 @@
   </footer>
 </body>
 </html>
-

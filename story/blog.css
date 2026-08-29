@@ -35,9 +35,10 @@
 .body { max-width:680px; font-size:1rem; line-height:1.95; }
 .body p { max-width:40ch; margin:0 0 1.7em; }
 .body h2 { max-width:24ch; margin:2.4em 0 .9em; font-size:clamp(1.55rem,3vw,2.15rem); line-height:1.45; }
-.body ul { max-width:40ch; margin:0 0 1.8em; padding-left:1.3em; }
+.body ul,.body ol { max-width:40ch; margin:0 0 1.8em; padding-left:1.3em; }
 .body li { margin-bottom:.5em; }
 .body li::marker { color:var(--accent); }
+.body a { color:var(--green); font-weight:700; text-decoration-color:var(--accent); text-underline-offset:5px; }
 .faq { margin-top:80px; }
 .faq>h2 { margin-bottom:22px; font-size:1.5rem; }
 .faq details { padding:18px 0; border-top:1px solid var(--green); }
