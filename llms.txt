@@ -12,6 +12,7 @@
 - [내 소개](https://woowahanga.vercel.app/about.html): 우와한가를 시작한 이유와 약속
 - [제품](https://woowahanga.vercel.app/products.html): 현재 판매 중인 제품
 - [이야기](https://woowahanga.vercel.app/story/): 먹거리와 가족 식탁에 관한 글
+- [연락하기](https://woowahanga.vercel.app/contact.html): 이메일, Instagram, 스마트스토어 안내
 
 ## 이야기(블로그)
 
