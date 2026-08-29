@@ -1,0 +1,24 @@
+# 우와한가 (WooWahanga)
+
+가족의 건강한 식탁을 위해 좋은 먹거리와 가벼운 한 끼 아이디어를 전하는 브랜드입니다.
+
+## 파는 것
+
+부위별 200g 투쁠 소고기와 고구마, 사과 등 농축산물을 소개합니다.
+
+## 페이지 안내
+
+- [홈](https://woowahanga.vercel.app/): 브랜드 소개와 대표 제품
+- [내 소개](https://woowahanga.vercel.app/about.html): 우와한가를 시작한 이유와 약속
+- [제품](https://woowahanga.vercel.app/products.html): 현재 판매 중인 제품
+- [이야기](https://woowahanga.vercel.app/story/): 먹거리와 가족 식탁에 관한 글
+
+## 이야기(블로그)
+
+- [냉동 소고기는 냉장실에서 어떻게 해동하나요?](https://woowahanga.vercel.app/story/thaw-frozen-beef-in-fridge.html): 냉동 소고기를 실온에 두지 않고 냉장실에서 천천히 해동하는 순서와 상태 확인법을 정리했습니다.
+- [남편 주말 술안주, 소고기로 간단하게 무엇을 만들까요?](https://woowahanga.vercel.app/story/weekend-beef-snack.html): 소고기와 버섯, 양파를 한 팬에 볶아 주말 저녁에 부담 없이 차릴 수 있는 따뜻한 술안주를 소개합니다.
+- [구워 먹는 고구마 말고 아이 간식은 어떻게 만들까요?](https://woowahanga.vercel.app/story/sweet-potato-kids-snack.html): 익힌 고구마를 으깨 작게 빚는 고구마 치즈전을 만들어, 익숙한 재료를 새로운 아이 간식으로 즐기는 방법입니다.
+- [사과로 가족의 가벼운 아침 식사는 어떻게 만들까요?](https://woowahanga.vercel.app/story/apple-light-breakfast.html): 사과와 플레인 요거트, 오트밀을 한 그릇에 담아 바쁜 아침에도 간단히 준비하는 가족 아침 식사입니다.
+- [가격을 바로잡은 일이 믿음이 되기까지](https://woowahanga.vercel.app/story/honest-price-trust.html): 제주 감귤의 잘못 적힌 가격을 바로잡으며, 정직한 안내가 오래 이어지는 믿음이 된 경험을 나눕니다.
+- [우리가 이 브랜드를 시작한 이유](https://woowahanga.vercel.app/story/brand-start.html): 작은 불편에서 시작된 고민이 어떻게 하나의 브랜드가 되었는지, 그 첫 마음을 기록합니다.
+- [패키지 하나를 바꾸는 데 석 달이 걸린 이야기](https://woowahanga.vercel.app/story/package-change.html): 고객의 한 줄 후기에서 시작된 패키지 개선 프로젝트. 사소해 보이는 디테일에 오래 머문 이유를 적었습니다.
