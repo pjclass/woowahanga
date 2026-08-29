@@ -30,7 +30,7 @@ const curatedProducts = document.querySelector('[data-curated-products]');
 
 function createProductCard(product, index, featured = false) {
   const card = document.createElement('article');
-  card.className = featured ? 'product-card featured-product-card' : 'product-card';
+  card.className = featured === true ? 'product-card featured-product-card' : 'product-card';
 
   const imageLink = document.createElement('a');
   imageLink.className = 'product-image-link';
@@ -82,7 +82,7 @@ async function renderProducts() {
     productGrids.forEach((grid) => {
       const limit = Number(grid.dataset.limit) || products.length;
       const visibleProducts = products.slice(0, limit);
-      grid.replaceChildren(...visibleProducts.map(createProductCard));
+      grid.replaceChildren(...visibleProducts.map((product, index) => createProductCard(product, index)));
     });
 
     if (curatedProducts) {
