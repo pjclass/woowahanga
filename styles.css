@@ -5,7 +5,7 @@ body { margin:0; background:var(--ivory); color:var(--green); font-family:var(--
 a { color:inherit; } button,input,textarea { color:inherit; font:inherit; }
 .skip-link { position:fixed; top:12px; left:12px; z-index:100; padding:10px 16px; background:var(--ivory); transform:translateY(-150%); }
 .skip-link:focus { transform:none; }
-.site-header { position:absolute; inset:0 0 auto; z-index:10; height:94px; padding:0 clamp(24px,5vw,80px); display:flex; align-items:center; justify-content:space-between; color:var(--ivory); }
+.site-header { position:absolute; inset:0 0 auto; z-index:10; height:94px; padding:0 clamp(24px,5vw,80px); display:flex; align-items:center; justify-content:space-between; background:transparent; color:var(--ivory); }
 .brand { display:inline-flex; align-items:center; gap:11px; font-size:1.25rem; font-weight:900; letter-spacing:-.05em; text-decoration:none; }
 .brand-mark { width:36px; height:36px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
 .site-nav { display:flex; align-items:center; gap:clamp(24px,3vw,48px); }
@@ -83,11 +83,29 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
 .contact-form input::placeholder,.contact-form textarea::placeholder { color:var(--ivory); opacity:.6; }
 .contact-form button { width:100%; min-height:56px; border:1px solid var(--accent); background:var(--accent); color:var(--ivory); font-weight:700; cursor:pointer; }
 .form-status { min-height:1.3em; margin:14px 0 0; font-size:.7rem; }
+.contact-home-action { align-self:end; }
+.contact-home-action a { display:flex; min-height:64px; align-items:center; justify-content:center; border:1px solid var(--accent); background:var(--accent); color:var(--ivory); font-size:.8rem; font-weight:700; text-decoration:none; }
 .site-footer { padding:68px clamp(24px,8vw,132px) 32px; background:var(--green); color:var(--ivory); display:grid; grid-template-columns:1fr 1fr; gap:50px; }
 .footer-brand { display:grid; width:fit-content; font-size:1.35rem; font-weight:900; letter-spacing:-.05em; text-decoration:none; }
 .footer-brand small { font-size:.56rem; font-weight:500; letter-spacing:.14em; }
 .site-footer>p { justify-self:end; font-size:1.45rem; font-weight:900; letter-spacing:-.04em; }
 .site-footer>div { grid-column:1/-1; padding-top:20px; border-top:1px solid var(--ivory); display:flex; justify-content:space-between; font-size:.67rem; }
+.footer-links { display:flex; gap:clamp(18px,3vw,42px); }
+.footer-links a { text-underline-offset:5px; }
+.contact-hero { min-height:82svh; padding:clamp(160px,23vh,240px) clamp(24px,8vw,132px) clamp(80px,12vh,130px); display:flex; align-items:flex-end; background:var(--green); color:var(--ivory); }
+.contact-hero-copy { width:min(1080px,100%); }
+.contact-hero h1 { max-width:12ch; margin-bottom:30px; font-size:clamp(3.4rem,7.4vw,8rem); }
+.contact-hero-copy>p:last-child { max-width:32ch; margin:0; font-size:clamp(.9rem,1.3vw,1.08rem); }
+.contact-directory { min-height:115svh; padding:max(15vh,120px) clamp(24px,8vw,132px); }
+.contact-directory-heading { display:grid; grid-template-columns:.35fr 1.4fr; gap:7vw; align-items:start; margin-bottom:clamp(72px,12vh,140px); }
+.contact-directory-heading h2 { max-width:13ch; }
+.contact-channel-list { border-top:1px solid var(--green); }
+.contact-channel { min-height:clamp(150px,21vh,220px); padding:clamp(28px,4vw,58px) 0; border-bottom:1px solid var(--green); display:grid; grid-template-columns:minmax(80px,.35fr) 1.4fr auto; gap:5vw; align-items:center; text-decoration:none; transition:padding .35s ease, background-color .35s ease, color .35s ease; }
+.contact-channel>span { color:var(--accent); font-size:.7rem; font-weight:700; letter-spacing:.08em; }
+.contact-channel strong { font-size:clamp(1.35rem,3vw,3.4rem); line-height:1.25; letter-spacing:-.055em; word-break:break-word; }
+.contact-channel em { font-size:.7rem; font-style:normal; text-decoration:underline; text-underline-offset:7px; }
+.contact-channel:hover,.contact-channel:focus-visible { padding-inline:clamp(18px,3vw,44px); background:var(--accent); color:var(--ivory); outline:0; }
+.contact-channel:hover>span,.contact-channel:focus-visible>span { color:var(--ivory); }
 .about-hero { position:relative; min-height:100svh; overflow:hidden; display:flex; align-items:flex-end; color:var(--ivory); }
 .about-hero-media { position:absolute; inset:0; background:url("assets/woowahanga-hero.png") 58% center/cover no-repeat; }
 .about-hero-scrim { position:absolute; inset:0; background:linear-gradient(90deg,rgba(20,53,42,.9) 0%,rgba(20,53,42,.54) 52%,rgba(20,53,42,.2) 100%); }
@@ -155,6 +173,10 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
   .story-list article>p,.story-list article>a { grid-column:2; }
   .contact { grid-template-columns:1fr; }
   .contact-form { margin-top:48px; }
+  .contact-home-action { margin-top:48px; }
+  .contact-directory-heading { grid-template-columns:1fr; gap:32px; }
+  .contact-channel { grid-template-columns:100px 1fr; }
+  .contact-channel em { grid-column:2; }
   .story-section { grid-template-columns:110px 1fr; }
   .story-heading { grid-column:2; }
   .story-prose { grid-column:2; padding-top:38px; }
@@ -203,9 +225,17 @@ h2 { max-width:14ch; margin:0; font-size:clamp(2.8rem,5.8vw,6.4rem); line-height
   .promise h2 { font-size:clamp(2.5rem,11vw,3.5rem); }
   .site-footer { grid-template-columns:1fr; }
   .site-footer>p { justify-self:start; }
+  .site-footer>div { align-items:flex-start; flex-wrap:wrap; gap:20px 28px; }
+  .footer-links { order:3; width:100%; flex-direction:column; gap:8px; }
+  .contact-hero { min-height:78svh; padding-inline:20px; }
+  .contact-hero h1 { font-size:clamp(3rem,14vw,4rem); }
+  .contact-directory { padding:max(15vh,100px) 20px; }
+  .contact-channel { min-height:0; grid-template-columns:1fr; gap:14px; }
+  .contact-channel em { grid-column:1; }
 }
 @media (prefers-reduced-motion:reduce) {
   .marquee-track { animation:none; transform:none; }
   .product-image-link img { transition:none; }
   .product-card:hover .product-image-link img { transform:none; }
+  .contact-channel { transition:none; }
 }

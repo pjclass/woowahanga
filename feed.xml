@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>우와한가 이야기</title>
+    <link>https://woowahanga.vercel.app/story/</link>
+    <description>가족의 식탁과 우리 먹거리에 관한 우와한가의 기록입니다.</description>
+    <language>ko</language>
+    <item>
+      <title>냉동 소고기는 냉장실에서 어떻게 해동하나요?</title>
+      <link>https://woowahanga.vercel.app/story/thaw-frozen-beef-in-fridge.html</link>
+      <description>냉동 소고기를 냉장실에서 안전하게 해동하는 순서와 상태 확인법, 급할 때 전자레인지 사용 시 주의점을 정리했습니다. 부위별 200g 소포장을 필요한 만큼 준비하는 방법도 함께 안내합니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/thaw-frozen-beef-in-fridge.html</guid>
+    </item>
+    <item>
+      <title>남편 주말 술안주, 소고기로 간단하게 무엇을 만들까요?</title>
+      <link>https://woowahanga.vercel.app/story/weekend-beef-snack.html</link>
+      <description>소고기와 버섯, 양파를 한 팬에 볶아 주말 저녁에 부담 없이 차릴 수 있는 따뜻한 술안주를 소개합니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/weekend-beef-snack.html</guid>
+    </item>
+    <item>
+      <title>구워 먹는 고구마 말고 아이 간식은 어떻게 만들까요?</title>
+      <link>https://woowahanga.vercel.app/story/sweet-potato-kids-snack.html</link>
+      <description>익힌 고구마를 으깨 작게 빚는 고구마 치즈전을 만들어, 익숙한 재료를 새로운 아이 간식으로 즐기는 방법입니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/sweet-potato-kids-snack.html</guid>
+    </item>
+    <item>
+      <title>사과로 가족의 가벼운 아침 식사는 어떻게 만들까요?</title>
+      <link>https://woowahanga.vercel.app/story/apple-light-breakfast.html</link>
+      <description>사과와 플레인 요거트, 오트밀을 한 그릇에 담아 바쁜 아침에도 간단히 준비하는 가족 아침 식사입니다.</description>
+      <pubDate>Fri, 28 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/apple-light-breakfast.html</guid>
+    </item>
+    <item>
+      <title>가격을 바로잡은 일이 믿음이 되기까지</title>
+      <link>https://woowahanga.vercel.app/story/honest-price-trust.html</link>
+      <description>제주 감귤의 잘못 적힌 가격을 바로잡으며, 정직한 안내가 오래 이어지는 믿음이 된 경험을 나눕니다.</description>
+      <pubDate>Wed, 26 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/honest-price-trust.html</guid>
+    </item>
+    <item>
+      <title>우리가 이 브랜드를 시작한 이유</title>
+      <link>https://woowahanga.vercel.app/story/brand-start.html</link>
+      <description>작은 불편에서 시작된 고민이 어떻게 하나의 브랜드가 되었는지, 그 첫 마음을 기록합니다.</description>
+      <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/brand-start.html</guid>
+    </item>
+    <item>
+      <title>패키지 하나를 바꾸는 데 석 달이 걸린 이야기</title>
+      <link>https://woowahanga.vercel.app/story/package-change.html</link>
+      <description>고객의 한 줄 후기에서 시작된 패키지 개선 프로젝트. 사소해 보이는 디테일에 오래 머문 이유를 적었습니다.</description>
+      <pubDate>Thu, 13 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://woowahanga.vercel.app/story/package-change.html</guid>
+    </item>
+  </channel>
+</rss>

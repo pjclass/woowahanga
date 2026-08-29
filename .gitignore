@@ -1,2 +1,5 @@
 .playwright-cli/
 output/
+
+.vercel
+.env*
