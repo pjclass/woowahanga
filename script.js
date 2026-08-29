@@ -157,12 +157,14 @@ function createHomeStoryCard(post) {
 
 async function renderHomeStories() {
   try {
-    const response = await fetch(homeStories.dataset.postsSrc, { cache: 'no-store' });
+    const source = new URL(homeStories.dataset.postsSrc, document.baseURI);
+    const response = await fetch(source, { cache: 'no-store' });
     if (!response.ok) throw new Error('이야기를 불러오지 못했습니다.');
     const posts = await response.json();
     if (!Array.isArray(posts)) throw new Error('이야기 형식이 올바르지 않습니다.');
     const limit = Number(homeStories.dataset.limit) || 3;
     const latest = posts.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || ''))).slice(0, limit);
+    if (!latest.length) throw new Error('표시할 이야기가 없습니다.');
     homeStories.replaceChildren(...latest.map(createHomeStoryCard));
   } catch (error) {
     const message = document.createElement('p');
