@@ -17,7 +17,10 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { rootMargin: '-35% 0px -55%' });
 sections.forEach((section) => sectionObserver.observe(section));
-document.querySelector('#contact-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  event.currentTarget.querySelector('.form-status').textContent = '현재는 사이트 준비 중이라 문의가 저장되지 않습니다. 이메일로 연락해주세요.';
-});
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    event.currentTarget.querySelector('.form-status').textContent = '현재는 사이트 준비 중이라 문의가 저장되지 않습니다. 이메일로 연락해주세요.';
+  });
+}
