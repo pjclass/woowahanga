@@ -113,3 +113,63 @@ async function renderProducts() {
 }
 
 if (productGrids.length || curatedProducts) renderProducts();
+
+const homeStories = document.querySelector('[data-home-stories]');
+
+function formatStoryDate(value) {
+  const date = new Date(`${value}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return value || '';
+  return `${date.getFullYear()}. ${String(date.getMonth() + 1).padStart(2, '0')}. ${String(date.getDate()).padStart(2, '0')}`;
+}
+
+function storyUrl(post) {
+  return post.url ? `story/${post.url}` : `story/post.html?id=${encodeURIComponent(post.id || '')}`;
+}
+
+function createHomeStoryCard(post) {
+  const article = document.createElement('article');
+  article.className = 'home-story-card';
+
+  const time = document.createElement('time');
+  time.dateTime = post.date || '';
+  time.textContent = formatStoryDate(post.date);
+
+  const headingGroup = document.createElement('div');
+  if (Array.isArray(post.tags) && post.tags.length) {
+    const tag = document.createElement('span');
+    tag.textContent = post.tags[0];
+    headingGroup.append(tag);
+  }
+  const title = document.createElement('h3');
+  title.textContent = post.title || '제목 없음';
+  headingGroup.append(title);
+
+  const summary = document.createElement('p');
+  summary.textContent = post.summary || '';
+
+  const link = document.createElement('a');
+  link.href = storyUrl(post);
+  link.textContent = '읽어보기';
+
+  article.append(time, headingGroup, summary, link);
+  return article;
+}
+
+async function renderHomeStories() {
+  try {
+    const response = await fetch(homeStories.dataset.postsSrc, { cache: 'no-store' });
+    if (!response.ok) throw new Error('이야기를 불러오지 못했습니다.');
+    const posts = await response.json();
+    if (!Array.isArray(posts)) throw new Error('이야기 형식이 올바르지 않습니다.');
+    const limit = Number(homeStories.dataset.limit) || 3;
+    const latest = posts.slice().sort((a, b) => String(b.date || '').localeCompare(String(a.date || ''))).slice(0, limit);
+    homeStories.replaceChildren(...latest.map(createHomeStoryCard));
+  } catch (error) {
+    const message = document.createElement('p');
+    message.className = 'story-error';
+    message.textContent = '이야기를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
+    homeStories.replaceChildren(message);
+  }
+}
+
+if (homeStories) renderHomeStories();

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="우와한가의 산지와 식탁 이야기를 기록합니다.">
+  <title>이야기 | 우와한가</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2314352A'/%3E%3Cpath d='M15 40C15 23 27 12 49 11c0 22-11 36-30 39M20 49c7-13 16-22 29-31' fill='none' stroke='%23FBF8F0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="blog.css">
+  <script src="../script.js" defer></script>
+</head>
+<body class="story-index-page">
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="../index.html" aria-label="우와한가 홈">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <path d="M8 27C8 15 16 7 31 6c0 15-7 25-20 27"/>
+        <path d="M12 33c5-9 11-15 19-21"/>
+      </svg>
+      <span>우와한가</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span>메뉴</span><span class="menu-mark" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+      <a href="../index.html#home">홈</a><a href="../about.html">내 소개</a><a href="../products.html">제품</a><a href="index.html" aria-current="page">이야기</a><a href="../index.html#contact">연락하기</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="story-hero" aria-labelledby="story-title">
+      <div class="story-hero-media" role="img" aria-label="한우와 제철 농산물이 놓인 우와한가 식탁"></div>
+      <div class="story-hero-scrim" aria-hidden="true"></div>
+      <div class="story-hero-copy">
+        <p class="kicker">우와한가 이야기</p>
+        <h1 id="story-title">밭과 식탁 사이의<br>이야기를 기록합니다.</h1>
+        <p>기르는 사람의 마음과 좋은 재료를<br>맛있게 즐기는 방법을 나눕니다.</p>
+      </div>
+    </section>
+    <section class="blog-list-section" aria-labelledby="blog-list-title">
+      <header class="blog-list-heading">
+        <div>
+          <p class="section-label">최근 이야기</p>
+          <h2 id="blog-list-title">차곡차곡 쌓아가는<br>우와한 기록</h2>
+        </div>
+        <a class="admin-link" href="admin.html">관리</a>
+      </header>
+      <ul class="blog-list" id="list"></ul>
+    </section>
+  </main>
+  <script>
+
+(function(){
+  var list = document.getElementById('list');
+
+  function el(tag, cls, text){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function fmtDate(s){
+    var d = new Date(s + 'T00:00:00');
+    if (isNaN(d)) return s || '';
+    return d.getFullYear() + '. ' + (d.getMonth()+1) + '. ' + d.getDate() + '.';
+  }
+
+  function render(posts){
+    if (!Array.isArray(posts) || posts.length === 0){
+      var empty = el('div','empty');
+      empty.appendChild(el('strong', null, '아직 올라온 글이 없습니다'));
+      empty.appendChild(document.createTextNode('첫 번째 이야기를 준비하고 있어요. 곧 만나요.'));
+      list.replaceWith(empty);
+      return;
+    }
+    posts = posts.slice().sort(function(a,b){
+      return String(b.date||'').localeCompare(String(a.date||''));
+    });
+    posts.forEach(function(p){
+      var li = el('li','card');
+      var a = el('a');
+      a.href = p.url ? String(p.url) : 'post.html?id=' + encodeURIComponent(p.id || '');
+      var t = el('time', null, fmtDate(p.date));
+      t.setAttribute('datetime', String(p.date||''));
+      a.appendChild(t);
+      a.appendChild(el('h2', null, String(p.title || '(제목 없음)')));
+      if (p.summary) a.appendChild(el('p','summary', String(p.summary)));
+      if (Array.isArray(p.tags) && p.tags.length){
+        var tags = el('div','tags');
+        p.tags.forEach(function(tg){ tags.appendChild(el('span','tag', String(tg))); });
+        a.appendChild(tags);
+      }
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  }
+
+  fetch('posts.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function(){
+      list.replaceWith(el('div','error','글 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'));
+    });
+})();
+
+  </script>
+  <footer class="site-footer">
+    <a class="footer-brand" href="../index.html"><span>우와한가</span><small>WooWahanga</small></a>
+    <p>자연이 기른 좋은 맛을 전합니다.</p>
+    <div><span>© 2026 우와한가</span><a href="#top">맨 위로</a></div>
+  </footer>
+</body>
+</html>
+

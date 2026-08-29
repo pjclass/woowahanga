@@ -26,7 +26,7 @@
       <span>메뉴</span><span class="menu-mark" aria-hidden="true"></span>
     </button>
     <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
-      <a href="#home">홈</a><a href="about.html">내 소개</a><a href="products.html">제품</a><a href="#stories">이야기</a><a href="#contact">연락하기</a>
+      <a href="#home">홈</a><a href="about.html">내 소개</a><a href="products.html">제품</a><a href="story/">이야기</a><a href="#contact">연락하기</a>
     </nav>
   </header>
   <main id="main">
@@ -80,11 +80,10 @@
         <h2 id="stories-title">우와한 이야기</h2>
         <p>기르는 사람의 마음과<br>맛있게 먹는 방법을 기록합니다.</p>
       </header>
-      <div class="story-list">
-        <article><time datetime="2026-08-20">2026. 08. 20</time><div><span>산지 이야기</span><h3>한 알의 사과가<br>붉어지기까지</h3></div><p>계절을 지나 단단하고 달게 익어가는<br>과수원의 시간을 소개합니다.</p><a href="#contact">읽어보기</a></article>
-        <article><time datetime="2026-08-08">2026. 08. 08</time><div><span>맛있게 먹는 법</span><h3>오늘 요리에 맞는<br>소고기 부위 고르기</h3></div><p>구이부터 국거리까지 요리마다<br>잘 어울리는 부위를 정리했습니다.</p><a href="#contact">읽어보기</a></article>
-        <article><time datetime="2026-07-26">2026. 07. 26</time><div><span>보관 안내</span><h3>제철 농산물을<br>오래 신선하게</h3></div><p>고구마와 사과의 맛과 식감을<br>지키는 보관 방법을 알려드립니다.</p><a href="#contact">읽어보기</a></article>
+      <div class="story-list home-story-list" data-home-stories data-posts-src="story/posts.json" data-limit="3" aria-live="polite">
+        <p class="story-loading">이야기를 불러오는 중입니다.</p>
       </div>
+      <div class="story-section-foot"><a href="story/">이야기 더 보기</a></div>
     </section>
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="contact-copy">
