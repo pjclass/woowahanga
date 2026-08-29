@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="우와한가는 정직하게 기른 농축산물을 산지의 신선함 그대로 전합니다.">
   <title>우와한가 | 자연이 기른 좋은 맛</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231C1A17'/%3E%3Cpath d='M15 40C15 23 27 12 49 11c0 22-11 36-30 39M20 49c7-13 16-22 29-31' fill='none' stroke='%23F6F1E7' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2314352A'/%3E%3Cpath d='M15 40C15 23 27 12 49 11c0 22-11 36-30 39M20 49c7-13 16-22 29-31' fill='none' stroke='%23FBF8F0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -40,60 +40,70 @@
       </div>
       <a class="scroll-cue" href="#about">천천히 둘러보기</a>
     </section>
+    <section class="marquee" aria-label="우와한가 핵심 가치">
+      <div class="marquee-track">
+        <div class="marquee-set">
+          <span>제철의 맛</span><span>정직한 산지</span><span>신선한 한 끼</span><span>우리 땅의 먹거리</span>
+        </div>
+        <div class="marquee-set" aria-hidden="true">
+          <span>제철의 맛</span><span>정직한 산지</span><span>신선한 한 끼</span><span>우리 땅의 먹거리</span>
+        </div>
+      </div>
+    </section>
     <section class="manifesto section" id="about" aria-labelledby="about-title">
-      <div class="section-label reveal">우와한가 소개</div>
-      <div class="manifesto-copy reveal">
+      <div class="section-label">우와한가 소개</div>
+      <div class="manifesto-copy">
         <h2 id="about-title">좋은 먹거리는<br>좋은 땅에서 시작됩니다.</h2>
         <p class="lead">우리는 생산자의 수고와<br>제철의 가치를 믿습니다.</p>
         <p>산지와 품종, 기르는 과정을 살피고<br>가장 좋은 때에 수확한 먹거리를<br>신선한 상태 그대로 전합니다.</p>
       </div>
-      <dl class="principles reveal" aria-label="우와한가가 지키는 원칙">
+      <dl class="principles" aria-label="우와한가가 지키는 원칙">
         <div><dt>제철</dt><dd>맛과 영양이 깊어지는<br>시간을 기다립니다.</dd></div>
         <div><dt>산지</dt><dd>누가 어디서 어떻게<br>길렀는지 확인합니다.</dd></div>
         <div><dt>신선</dt><dd>좋은 상태가 식탁까지<br>이어지도록 전합니다.</dd></div>
       </dl>
     </section>
     <section class="products section" id="products" aria-labelledby="products-title">
-      <header class="section-heading reveal">
+      <header class="section-heading">
         <div class="section-label">대표 제품</div>
         <h2 id="products-title">오늘의 좋은 것들</h2>
         <p>계절과 산지의 흐름에 따라<br>가장 좋은 먹거리를 소개합니다.</p>
       </header>
       <div class="product-list">
-        <article class="product product-beef reveal">
+        <article class="product product-beef">
           <div class="product-photo" role="img" aria-label="마블링이 선명한 한우 등심"></div>
           <div class="product-caption"><span>부위별 소고기</span><h3>한우 등심</h3><p>고소한 풍미와 부드러운 육질.<br>구이로 즐기기 좋은 부위입니다.</p></div>
         </article>
-        <article class="product product-sweet-potato reveal">
+        <article class="product product-sweet-potato">
           <div class="product-photo" role="img" aria-label="흙이 묻은 햇고구마"></div>
           <div class="product-caption"><span>제철 농산물</span><h3>햇고구마</h3><p>포슬한 속살과 은은한 단맛.<br>제철의 든든함을 담았습니다.</p></div>
         </article>
-        <article class="product product-apple reveal">
+        <article class="product product-apple">
           <div class="product-photo" role="img" aria-label="붉게 익은 제철 사과"></div>
           <div class="product-caption"><span>제철 과일</span><h3>햇사과</h3><p>한입 베어 물면 퍼지는 산뜻함.<br>단단하고 맑은 맛을 고릅니다.</p></div>
         </article>
       </div>
-      <p class="availability reveal">제품 구성과 수확 시기는 산지 상황에 따라 달라집니다.</p>
+      <p class="availability">제품 구성과 수확 시기는 산지 상황에 따라 달라집니다.</p>
     </section>
     <section class="stories section" id="stories" aria-labelledby="stories-title">
-      <header class="section-heading reveal">
+      <header class="section-heading">
         <div class="section-label">밭과 식탁 사이의 기록</div>
         <h2 id="stories-title">우와한 이야기</h2>
         <p>기르는 사람의 마음과<br>맛있게 먹는 방법을 기록합니다.</p>
       </header>
-      <div class="story-list reveal">
+      <div class="story-list">
         <article><time datetime="2026-08-20">2026. 08. 20</time><div><span>산지 이야기</span><h3>한 알의 사과가<br>붉어지기까지</h3></div><p>계절을 지나 단단하고 달게 익어가는<br>과수원의 시간을 소개합니다.</p><a href="#contact">읽어보기</a></article>
         <article><time datetime="2026-08-08">2026. 08. 08</time><div><span>맛있게 먹는 법</span><h3>오늘 요리에 맞는<br>소고기 부위 고르기</h3></div><p>구이부터 국거리까지 요리마다<br>잘 어울리는 부위를 정리했습니다.</p><a href="#contact">읽어보기</a></article>
         <article><time datetime="2026-07-26">2026. 07. 26</time><div><span>보관 안내</span><h3>제철 농산물을<br>오래 신선하게</h3></div><p>고구마와 사과의 맛과 식감을<br>지키는 보관 방법을 알려드립니다.</p><a href="#contact">읽어보기</a></article>
       </div>
     </section>
     <section class="contact section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-copy reveal">
+      <div class="contact-copy">
         <div class="section-label">연락하기</div><h2 id="contact-title">궁금한 점을<br>편하게 남겨주세요.</h2>
         <p>제품과 주문, 산지에 관한 문의를<br>확인한 뒤 차분히 답변드리겠습니다.</p>
         <dl><div><dt>이메일</dt><dd><a href="mailto:hello@woowahanga.kr">hello@woowahanga.kr</a></dd></div><div><dt>운영 시간</dt><dd>평일 10:00–17:00</dd></div></dl>
       </div>
-      <form class="contact-form reveal" id="contact-form">
+      <form class="contact-form" id="contact-form">
         <label>이름<input type="text" name="name" autocomplete="name" required placeholder="이름을 입력해주세요"></label>
         <label>이메일<input type="email" name="email" autocomplete="email" required placeholder="답변받을 이메일을 입력해주세요"></label>
         <label>문의 내용<textarea name="message" rows="5" required placeholder="궁금한 내용을 적어주세요"></textarea></label>
