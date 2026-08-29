@@ -26,10 +26,11 @@ if (contactForm) {
 }
 
 const productGrids = document.querySelectorAll('[data-product-grid]');
+const curatedProducts = document.querySelector('[data-curated-products]');
 
-function createProductCard(product, index) {
+function createProductCard(product, index, featured = false) {
   const card = document.createElement('article');
-  card.className = 'product-card';
+  card.className = featured ? 'product-card featured-product-card' : 'product-card';
 
   const imageLink = document.createElement('a');
   imageLink.className = 'product-image-link';
@@ -51,6 +52,10 @@ function createProductCard(product, index) {
   const name = document.createElement('h3');
   name.textContent = product.name;
 
+  const tagline = document.createElement('p');
+  tagline.className = 'product-tagline';
+  tagline.textContent = product.tagline || '';
+
   const price = document.createElement('p');
   price.className = 'product-price';
   price.textContent = `${Number(product.price).toLocaleString('ko-KR')}원`;
@@ -62,7 +67,7 @@ function createProductCard(product, index) {
   buyLink.rel = 'noopener noreferrer';
   buyLink.textContent = '구매하기';
 
-  body.append(name, price, buyLink);
+  body.append(name, tagline, price, buyLink);
   card.append(imageLink, body);
   return card;
 }
@@ -79,6 +84,18 @@ async function renderProducts() {
       const visibleProducts = products.slice(0, limit);
       grid.replaceChildren(...visibleProducts.map(createProductCard));
     });
+
+    if (curatedProducts) {
+      const keyword = curatedProducts.dataset.featuredKeyword || '';
+      const secondaryLimit = Number(curatedProducts.dataset.secondaryLimit) || 5;
+      const featuredProduct = products.find((product) => product.name.includes(keyword)) || products[0];
+      const secondaryProducts = products.filter((product) => product !== featuredProduct).slice(0, secondaryLimit);
+      const featuredCard = createProductCard(featuredProduct, 0, true);
+      const secondaryGrid = document.createElement('div');
+      secondaryGrid.className = 'product-card-grid curated-secondary-grid';
+      secondaryGrid.append(...secondaryProducts.map((product, index) => createProductCard(product, index + 1)));
+      curatedProducts.replaceChildren(featuredCard, secondaryGrid);
+    }
   } catch (error) {
     productGrids.forEach((grid) => {
       const message = document.createElement('p');
@@ -86,7 +103,13 @@ async function renderProducts() {
       message.textContent = '제품 정보를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
       grid.replaceChildren(message);
     });
+    if (curatedProducts) {
+      const message = document.createElement('p');
+      message.className = 'product-error';
+      message.textContent = '제품 정보를 불러오지 못했습니다. 잠시 후 다시 확인해주세요.';
+      curatedProducts.replaceChildren(message);
+    }
   }
 }
 
-if (productGrids.length) renderProducts();
+if (productGrids.length || curatedProducts) renderProducts();
